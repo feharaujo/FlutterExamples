@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildItem(Article article) {
     return Padding(
+      key: Key(article.title),
       padding: EdgeInsets.all(16.0),
       child: ExpansionTile(
         title: Text(
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Text("${article.numberComments} comments"),
+              Text("${article.score} score"),
               IconButton(
                 icon: Icon(
                   Icons.open_in_new,
