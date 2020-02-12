@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hacker_news_app/data/Article.dart';
+import 'package:hacker_news_app/json_parsing.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() => runApp(MyApp());
@@ -28,7 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Article> articles = Article.fakeData();
+  //List<Article> articles = Article.fakeData();
+  List<Article> articles = [];
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              Text("${article.score} score"),
+              Text("${article.poll} score"),
               IconButton(
                 icon: Icon(
                   Icons.open_in_new,

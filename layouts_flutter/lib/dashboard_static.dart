@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Dashboard extends StatefulWidget {
+class DashboardStatic extends StatefulWidget {
   String username;
 
-  Dashboard({@required this.username});
+  DashboardStatic({@required this.username});
 
   @override
-  _DashboardState createState() => _DashboardState();
+  _DashboardStaticState createState() => _DashboardStaticState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardStaticState extends State<DashboardStatic> {
   var dbItems = List<String>();
 
   @override
@@ -22,7 +22,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Welcome $widget.username"),
+        title: Text("Welcome ${widget.username}"),
       ),
       body: dbItems.length == 0 ? _getLoadingWidget() : _getListBuilderWidget(),
     );
