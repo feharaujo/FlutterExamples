@@ -1,9 +1,9 @@
 library serializers;
 
-import 'package:built_value/serializer.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
-import 'package:hacker_news_app/json_parsing.dart';
+import 'package:hacker_news_app/data/article.dart';
 
 part 'serializers.g.dart';
 

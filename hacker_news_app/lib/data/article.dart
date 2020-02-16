@@ -3,10 +3,11 @@ import 'dart:convert' as json;
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:hacker_news_app/data/serializers.dart';
 
 import 'serializers.dart';
 
-part 'json_parsing.g.dart';
+part 'article.g.dart';
 
 abstract class Article implements Built<Article, ArticleBuilder> {
   static Serializer<Article> get serializer => _$articleSerializer;
@@ -53,10 +54,9 @@ abstract class Article implements Built<Article, ArticleBuilder> {
 }
 
 List<int> parseTopStories(String jsonString) {
-  /* final parsed = json.jsonDecode(jsonString);
+  final parsed = json.jsonDecode(jsonString);
   final listOfIds = List<int>.from(parsed);
-  return listOfIds;*/
-  return [];
+  return listOfIds;
 }
 
 Article parseArticle(String jsonString) {
