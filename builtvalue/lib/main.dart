@@ -1,3 +1,4 @@
+import 'package:builtvalue/code_runner.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -25,13 +26,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +34,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _runCode,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
     );
   }
+
+  void _runCode() {
+      CodeRunner.runCode();
+  }
+
 }
